@@ -1,5 +1,8 @@
 package projet.tdd.marsrover
 
 enum class Direction {
-    SOUTH
+    SOUTH,
+    EST,
+    WEST,
+    NORTH
 }
