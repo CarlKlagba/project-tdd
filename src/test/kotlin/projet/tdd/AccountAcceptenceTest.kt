@@ -5,12 +5,12 @@ import io.mockk.verify
 import org.junit.jupiter.api.Test
 
 class AccountAcceptenceTest {
-
     @Test
     internal fun acceptenceTest() {
         val displayInterface: DisplayInterface = MockDisplayInterface()
+        val transactionRepository: TransactionRepository = InMemoryTransactionRepository()
         val accountPrinter = AccountPrinter(displayInterface)
-        val account = Account(TransactionRepository(), accountPrinter)
+        val account = Account(transactionRepository, accountPrinter)
 
         account.deposit(Amount("1000"), Date("10-01-2012"))
         account.deposit(Amount("2000"), Date("13-01-2012"))

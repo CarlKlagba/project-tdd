@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 class AccountTest{
 
     @Test
-    internal fun `should save the deposit`() {
+    internal fun `should save the deposit when deposit`() {
         //GIVEN
         val accountPrinter = mockk<AccountPrinter>()
         val transactionRepository = mockk<TransactionRepository>()
@@ -22,7 +22,9 @@ class AccountTest{
 
         //THEN
         verify{
-            transactionRepository.save(Desposit(Amount("12345"), Date("10-10-2010")))
+            transactionRepository.save(Deposit(Amount("12345"), Date("10-10-2010")))
         }
     }
+
+
 }

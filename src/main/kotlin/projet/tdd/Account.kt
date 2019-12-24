@@ -2,7 +2,7 @@ package projet.tdd
 
 class Account(val transactionRepository: TransactionRepository, val accountPrinter: AccountPrinter) {
     fun deposit(amount: Amount, date: Date){
-        transactionRepository.save(Desposit(amount, date))
+        transactionRepository.save(Deposit(amount, date))
     }
 
     fun withdrawal(amount: Amount, date: Date) {
