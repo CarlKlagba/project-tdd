@@ -6,7 +6,7 @@ class Account(val transactionRepository: TransactionRepository, val accountPrint
     }
 
     fun withdrawal(amount: Amount, date: Date) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        transactionRepository.save(Withdrawal(amount, date))
     }
 
     fun printStatment() {

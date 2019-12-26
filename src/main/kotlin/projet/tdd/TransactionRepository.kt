@@ -1,6 +1,6 @@
 package projet.tdd
 
 interface TransactionRepository {
-    fun save(desposit: Deposit): Unit
+    fun save(transaction: Transaction): Unit
 }
 

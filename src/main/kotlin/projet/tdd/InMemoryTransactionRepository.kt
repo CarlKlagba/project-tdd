@@ -1,9 +1,13 @@
 package projet.tdd
 
 class InMemoryTransactionRepository: TransactionRepository {
-    val transactions: MutableList<Deposit> = mutableListOf()
+    private val transactions: MutableList<Transaction> = mutableListOf()
 
-    override fun save(deposit: Deposit) {
-        transactions.add(deposit)
+    override fun save(transaction: Transaction) {
+        transactions.add(transaction)
+    }
+
+    internal fun getTransactions(): List<Transaction> {
+        return transactions
     }
 }
