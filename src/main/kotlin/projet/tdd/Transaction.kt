@@ -1,6 +1,10 @@
 package projet.tdd
 
-sealed class Transaction(amount: Amount, date: Date)
+interface Transaction{
+    val amount: Amount
+    val date: Date
+}
 
-data class Deposit(val amount: Amount, val date: Date): Transaction(amount, date)
-data class Withdrawal(val amount: Amount, val date: Date): Transaction(amount, date)
+data class Deposit(override val amount: Amount, override val date: Date): Transaction
+data class Withdrawal(override val amount: Amount, override val date: Date): Transaction
+

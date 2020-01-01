@@ -7,7 +7,7 @@ class InMemoryTransactionRepository: TransactionRepository {
         transactions.add(transaction)
     }
 
-    internal fun getTransactions(): List<Transaction> {
+    override fun getTransactions(): List<Transaction> {
         return transactions
     }
 }

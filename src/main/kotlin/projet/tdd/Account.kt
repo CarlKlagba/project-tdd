@@ -1,6 +1,6 @@
 package projet.tdd
 
-class Account(val transactionRepository: TransactionRepository, val accountPrinter: AccountPrinter) {
+class Account(val transactionRepository: TransactionRepository, val statementPrinter: StatementPrinter) {
     fun deposit(amount: Amount, date: Date){
         transactionRepository.save(Deposit(amount, date))
     }
@@ -9,7 +9,8 @@ class Account(val transactionRepository: TransactionRepository, val accountPrint
         transactionRepository.save(Withdrawal(amount, date))
     }
 
-    fun printStatment() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    fun printStatement() {
+        val transactions = transactionRepository.getTransactions()
+        statementPrinter.printStatement(transactions)
     }
 }

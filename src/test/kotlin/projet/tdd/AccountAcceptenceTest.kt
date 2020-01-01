@@ -9,16 +9,16 @@ class AccountAcceptenceTest {
     internal fun acceptenceTest() {
         val displayInterface: DisplayInterface = MockDisplayInterface()
         val transactionRepository: TransactionRepository = InMemoryTransactionRepository()
-        val accountPrinter = AccountPrinter(displayInterface)
-        val account = Account(transactionRepository, accountPrinter)
+        val statmentPrinter = StatementPrinter(displayInterface)
+        val account = Account(transactionRepository, statmentPrinter)
 
         account.deposit(Amount("1000"), Date("10-01-2012"))
         account.deposit(Amount("2000"), Date("13-01-2012"))
         account.withdrawal(Amount("500"), Date("14-01-2012"))
 
-        account.printStatment()
+        account.printStatement()
 
-        verify{
+        verify {
             displayInterface
                 .print("""
             date       || credit   || debit    || balance
