@@ -15,7 +15,7 @@
         <kotlin.version>1.3.60</kotlin.version>
         <kotlin.code.style>official</kotlin.code.style>
         <junit.version>5.5.1</junit.version>
-        <assertj>3.13.2</assertj>
+        <assertj>3.27.7</assertj>
     </properties>
 
     <dependencies>
